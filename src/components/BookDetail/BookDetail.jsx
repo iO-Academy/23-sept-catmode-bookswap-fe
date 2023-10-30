@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./BookDetail.css"
 
-function BookDetail({bookID = 8}) {
+function BookDetail({bookID = 4}) {
 
     const [bookImage, setBookImage] = useState('');
     const [bookTitle, setBookTitle] = useState('');
@@ -46,12 +46,12 @@ function BookDetail({bookID = 8}) {
             </div>
 
             <div>
-                <h1>Book Title : {bookTitle}</h1>
-                <p>Book Author: {bookAuthor}</p>
-                <p>Year: {bookYear}</p>
-                <p>Page count: {bookPageCount}</p>
-                <p>Genre: {bookGenre}</p>
-                <p>Blurb: {bookBlurb}</p>
+                <h1>{bookTitle}</h1>
+                <p>{bookAuthor}</p>
+                <p>{bookYear}</p>
+                <p>{bookPageCount}</p>
+                <p>{bookGenre}</p>
+                <p>{bookBlurb}</p>
             </div>
 
 
