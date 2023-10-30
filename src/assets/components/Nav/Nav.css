@@ -1,3 +1,12 @@
-/* function Nav() {
-    return ()
-} */
+.navigation {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+}
