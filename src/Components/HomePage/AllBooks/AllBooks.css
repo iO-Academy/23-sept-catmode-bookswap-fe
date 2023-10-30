@@ -1,0 +1,6 @@
+.AllBooks {
+    display: flex;
+    flex-wrap: wrap;
+    Gap: 100px;
+    padding: 80px;
+}
