@@ -1,12 +1,33 @@
 .detailContainer{
-    display:flex;
-    flex-direction: column;
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    /* max-height: 40%; */
+    /* flex-direction: column; */
     color: white;
     background-color: red;
     border-radius: 15px;
-    padding: 50px;
+    padding: 20px;
 }
-img .detailContainer {
+
+@media screen and (max-width: 850px){ 
+    .detailContainer { 
+    grid-template-columns: 1fr;
+    } 
+} 
+
+.detailContainer div {
+    padding: 30px;
+}
+
+.detailContainerImage {
     border-radius: 8px;
-    width: 10%;
+    max-width: 100%;
+    padding: 0 auto;
+    /* max-height: 80%; */
 }
+
+@media screen and (max-width: 850px){ 
+    .detailContainerImage { 
+    max-width: 70%;
+    } 
+} 
