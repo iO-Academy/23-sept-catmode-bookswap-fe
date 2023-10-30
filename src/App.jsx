@@ -1,17 +1,20 @@
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import Nav from "./assets/components/Nav/Nav";
 import Allbooks from './Components/HomePage/AllBooks/AllBooks'
 import HomePage from './Components/HomePage/HomePage'
+import './App.css'
 
 function App() {
-
   return (
-    <>
-     <HomePage />
-    </>
-  )
+    <div>
+      <BrowserRouter>
+        <Nav />
+      </BrowserRouter>
+      <HomePage />
+    </div>
+  );
 }
 
-export default App
+export default App;
