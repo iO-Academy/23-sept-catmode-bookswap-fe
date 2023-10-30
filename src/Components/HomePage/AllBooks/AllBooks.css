@@ -1,6 +1,6 @@
-.AllBooks {
+.all-books {
     display: flex;
     flex-wrap: wrap;
-    Gap: 100px;
+    gap: 100px;
     padding: 80px;
 }

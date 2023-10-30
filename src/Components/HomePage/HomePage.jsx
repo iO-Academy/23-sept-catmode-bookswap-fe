@@ -3,7 +3,7 @@ import Allbooks from "./AllBooks/AllBooks"
 function HomePage() {
     return (
         <div>
-        <Allbooks />
+            <Allbooks />
         </div>
      )
 }

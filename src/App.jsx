@@ -1,8 +1,7 @@
 
 import { useState } from 'react'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./assets/components/Nav/Nav";
-import Allbooks from './Components/HomePage/AllBooks/AllBooks'
 import HomePage from './Components/HomePage/HomePage'
 import './App.css'
 
@@ -11,8 +10,11 @@ function App() {
     <div>
       <BrowserRouter>
         <Nav />
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
       </BrowserRouter>
-      <HomePage />
     </div>
   );
 }

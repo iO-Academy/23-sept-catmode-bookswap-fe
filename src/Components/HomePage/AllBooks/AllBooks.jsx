@@ -19,7 +19,7 @@ const [allBooks, setAllBooks] = useState([])
     
     return (
         <>
-            {<div className= "AllBooks">
+            {<div className= "all-books">
                 {allBooks.map(
                     bookData => <BookListing
                     key={bookData.id}
