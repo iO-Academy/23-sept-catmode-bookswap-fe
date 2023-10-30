@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "./BookDetail.css"
 
 function BookDetail({bookID = 6}) {
 
@@ -39,7 +40,7 @@ function BookDetail({bookID = 6}) {
     return (
         <>
         <h1>Book Swap</h1>
-
+        <div className="detailContainer">
             <img src={bookImage} alt={bookTitle} />
             <h1>Book Title : {bookTitle}</h1>
             <p>Book Author: {bookAuthor}</p>
@@ -47,6 +48,7 @@ function BookDetail({bookID = 6}) {
             <p>Page count: {bookPageCount}</p>
             <p>Genre: {bookGenre}</p>
             <p>Blurb: {bookBlurb}</p>
+        </div>
         </>
   
     )

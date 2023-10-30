@@ -1,0 +1,12 @@
+.detailContainer{
+    display:flex;
+    flex-direction: column;
+    color: white;
+    background-color: red;
+    border-radius: 15px;
+    padding: 50px;
+}
+img .detailContainer {
+    border-radius: 8px;
+    width: 10%;
+}
