@@ -16,7 +16,6 @@ function App() {
 
             <Route path="book/:id" element={<BookDetail />} />
 
-
           </Routes>
       </BrowserRouter>
     </div>

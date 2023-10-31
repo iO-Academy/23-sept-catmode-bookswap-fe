@@ -35,7 +35,7 @@ function BookDetail() {
             setBookBlurb(bookData.data.blurb);
         })
 
-    }, [])
+    }, [id])
 
     return (
         <>
@@ -55,6 +55,7 @@ function BookDetail() {
         </div>
         </>
     )
+
 }
 
 export default BookDetail
