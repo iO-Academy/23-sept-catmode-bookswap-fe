@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./BookDetail.css"
+import ClaimBook from "./ClaimBook/ClaimBook";
 
 function BookDetail({bookID = 4}) {
 
@@ -47,6 +48,7 @@ function BookDetail({bookID = 4}) {
                 <p>{bookYear}</p>
                 <p>{bookPageCount}</p>
                 <p>{bookGenre}</p>
+                <ClaimBook />
                 <p>{bookBlurb}</p>
             </div>
         </div>
