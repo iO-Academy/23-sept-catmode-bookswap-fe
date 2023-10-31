@@ -3,14 +3,14 @@ import "./Nav.css";
 function Nav() {
   return (
     <nav className="navigation">
-      <div>
+      <Link to="/">
         <h1>Book Swap</h1>
-      </div>
+      </Link>
       <div className="links">
-        <NavLink activeClass="active" to="availableBooks">
+        <NavLink activeClass="active" to="/">
           Available books
         </NavLink>
-        <NavLink activeClass="active" to="claimedBooks">
+        <NavLink activeClass="active" to="/books/claimed">
           Claimed books
         </NavLink>
         <NavLink activeClass="active" to="addBook">

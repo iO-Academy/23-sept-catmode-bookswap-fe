@@ -12,5 +12,10 @@
 }
 
 .active {
-  background-color: red;
+  background-color: aquamarine;
+  padding: 3px;
+}
+
+.links .a {
+  text-decoration: none;
 }
