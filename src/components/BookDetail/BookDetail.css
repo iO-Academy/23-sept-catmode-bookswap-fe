@@ -1,4 +1,4 @@
-.detailContainer{
+.detail-container{
     display:grid;
     grid-template-columns: 1fr 3fr;
     color: black;
@@ -10,23 +10,23 @@
 }
 
 @media screen and (max-width: 850px){ 
-    .detailContainer { 
+    .detail-container { 
         display: flex;
         flex-direction: column;
         align-items: center;
     } 
 } 
 @media screen and (max-width: 850px){ 
-    .detailContainerImage { 
+    .detail-container-image { 
         max-height: 30vh;
     } 
 }
 
-.detailContainer div {
+.detail-container div {
     padding: 30px;
 }
 
-.detailContainerImage {
+.detail-container-image {
     border-radius: 8px;
     max-width: 100%;
     padding: 0 auto;

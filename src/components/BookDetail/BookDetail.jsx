@@ -23,8 +23,6 @@ function BookDetail({bookID = 4}) {
         method: "GET",
     }).then(res => res.json())
         .then(bookData => {
-            console.log(bookData.data)
-
             setBookImage(bookData.data.image);
             setBookTitle(bookData.data.title);
             setBookAuthor(bookData.data.author);
@@ -32,7 +30,6 @@ function BookDetail({bookID = 4}) {
             setBookPageCount(bookData.data.page_count);
             setBookGenre(bookData.data.genre.name);
             setBookBlurb(bookData.data.blurb);
-            // console.log(bookAuthor)
         })
 
     }, [])
@@ -40,11 +37,10 @@ function BookDetail({bookID = 4}) {
     return (
         <>
         <h1>Book Swap</h1>
-        <div className="detailContainer">
+        <div className="detail-container">
             <div>
-                <img className="detailContainerImage" src={bookImage} alt={bookTitle} />
+                <img className="detail-container-image" src={bookImage} alt={bookTitle} />
             </div>
-
             <div>
                 <h1>{bookTitle}</h1>
                 <p>{bookAuthor}</p>
@@ -53,11 +49,8 @@ function BookDetail({bookID = 4}) {
                 <p>{bookGenre}</p>
                 <p>{bookBlurb}</p>
             </div>
-
-
         </div>
         </>
-  
     )
 }
 
