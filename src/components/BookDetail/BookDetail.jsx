@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import "./BookDetail.css"
 
 function BookDetail({bookID = 4}) {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom";
 import BookListing from "./BookListing/BookListing"
 import AllBooks from "./AllBooks.css"
 
@@ -19,15 +20,21 @@ const [allBooks, setAllBooks] = useState([])
     
     return (
         <>
+    
             {<div className= "all-books">
                 {allBooks.map(
-                    bookData => <BookListing
+                    bookData => 
+                    <NavLink to={"/book/" + bookData.id}>
+                    <BookListing
                     key={bookData.id}
+                    id={bookData.id}
                     title={bookData.title}
                     author={bookData.author}
                     image={bookData.image}
                     genre={bookData.genre.name}
-                    />)}
+                    />
+                    </NavLink>
+                    )}
             </div>}
             </>
      )
