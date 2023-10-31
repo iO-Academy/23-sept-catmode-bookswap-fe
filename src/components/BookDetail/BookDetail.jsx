@@ -2,7 +2,9 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "./BookDetail.css"
 
-function BookDetail({bookID = 4}) {
+function BookDetail() {
+
+    const {id} = useParams();
 
     const [bookImage, setBookImage] = useState('');
     const [bookTitle, setBookTitle] = useState('');
@@ -15,7 +17,7 @@ function BookDetail({bookID = 4}) {
     //Fetch the individual book data
     useEffect(function() {
 
-    fetch(`https://book-swap-api.dev.io-academy.uk/api/books/${bookID}`, {
+    fetch(`https://book-swap-api.dev.io-academy.uk/api/books/${id}`, {
         mode: 'cors',
         headers: {
             "Content-Type": "application/json",

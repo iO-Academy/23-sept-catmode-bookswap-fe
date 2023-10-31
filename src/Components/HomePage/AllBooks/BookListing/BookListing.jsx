@@ -9,7 +9,6 @@ function bookClick() {
     // clickedBook state
     // setClickedBook(id);
 
-    
 }
 
     
