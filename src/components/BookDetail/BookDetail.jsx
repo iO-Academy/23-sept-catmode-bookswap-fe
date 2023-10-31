@@ -38,8 +38,6 @@ function BookDetail() {
     }, [id])
 
     return (
-        <>
-        <h1>Book Swap</h1>
         <div className="detail-container">
             <div>
                 <img className="detail-container-image" src={bookImage} alt={bookTitle} />
@@ -53,7 +51,6 @@ function BookDetail() {
                 <p>{bookBlurb}</p>
             </div>
         </div>
-        </>
     )
 
 }
