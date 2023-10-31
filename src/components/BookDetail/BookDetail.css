@@ -1,0 +1,33 @@
+.detail-container{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    color: black;
+    /* background-color:darkslategrey; */
+    border-radius: 15px;
+    padding: 20px;
+    
+    box-shadow: 2px 2px 5px black;
+}
+
+@media screen and (max-width: 850px){ 
+    .detail-container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+} 
+@media screen and (max-width: 850px){ 
+    .detail-container-image { 
+        max-height: 30vh;
+    } 
+}
+
+.detail-container div {
+    padding: 30px;
+}
+
+.detail-container-image {
+    border-radius: 8px;
+    max-width: 100%;
+    padding: 0 auto;
+} 
