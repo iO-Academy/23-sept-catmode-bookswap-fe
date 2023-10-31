@@ -4,12 +4,24 @@
     display:grid;
     grid-template-columns: 1fr 3fr;
     color: black;
+    /* background-color:darkslategrey; */
     border-radius: 15px;
     padding: 20px;
+    
     box-shadow: 2px 2px 5px black;
 }
 .detail-container-text{
     margin-top: 5vh;
+}
+@media screen and (max-width: 1090px){
+    .detail-container-image {
+        margin-top: 2vh;
+    }
+}
+@media screen and (max-width: 940px){
+    .detail-container-image {
+        margin-top: 5vh;
+    }
 }
 @media screen and (max-width: 850px){ 
     .detail-container { 
@@ -46,4 +58,4 @@
     border-radius: 8px;
     max-width: 100%;
     padding: 0 auto;
-} 
+}
