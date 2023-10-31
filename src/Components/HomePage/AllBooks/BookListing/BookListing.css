@@ -1,13 +1,21 @@
 .book {
     border: 3px solid black;
-    padding: 50px 80px 80px 80px;
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    box-shadow: 2px 2px 5px gray;
+    width: 400px;
 }
 
 .book img {
-    width: 400px;
+    width: 300px;
     border: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+    .book {
+        width: 350px;
+    }
 }

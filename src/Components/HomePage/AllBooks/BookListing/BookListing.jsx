@@ -7,7 +7,7 @@ function BookListing({image, title, author, genre,}) {
     return (
         <div className="book">
              <img src={image} />
-            <h1>Title: {title}</h1>
+            <h3>Title: {title}</h3>
             <p>Author: {author}</p>
             <p>Genre: {genre}</p>
            
