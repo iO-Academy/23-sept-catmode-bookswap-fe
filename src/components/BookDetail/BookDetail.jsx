@@ -41,7 +41,7 @@ function BookDetail({bookID = 4}) {
             <div>
                 <img className="detail-container-image" src={bookImage} alt={bookTitle} />
             </div>
-            <div>
+            <div className="detail-container-text">
                 <h1>{bookTitle}</h1>
                 <p>{bookAuthor}</p>
                 <p>{bookYear}</p>
