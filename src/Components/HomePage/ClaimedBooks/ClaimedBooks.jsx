@@ -12,7 +12,6 @@ function ClaimedBooks() {
       })
       .then(function (bookData) {
         setClaimedBooks(bookData.data);
-        console.log(bookData.data);
       });
   }, []);
 
