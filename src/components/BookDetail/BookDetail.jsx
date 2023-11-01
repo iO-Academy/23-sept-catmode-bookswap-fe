@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import "./BookDetail.css"
 import ClaimBook from "./ClaimBook/ClaimBook";
 
-function BookDetail({bookID = 4}) {
+function BookDetail({bookID = 5}) {
 
     const [bookImage, setBookImage] = useState('');
     const [bookTitle, setBookTitle] = useState('');
@@ -48,7 +48,7 @@ function BookDetail({bookID = 4}) {
                 <p>{bookYear}</p>
                 <p>{bookPageCount}</p>
                 <p>{bookGenre}</p>
-                <ClaimBook />
+                <ClaimBook bookID={bookID} />
                 <p>{bookBlurb}</p>
             </div>
         </div>
