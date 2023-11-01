@@ -17,30 +17,28 @@ const[clickedBook, setClickedBook] = useState(null);
         })
         .then(function (bookData) {
             setAllBooks(bookData.data)
-            console.log(bookData.data)
         })
     }, [])
     
     return (
         <>
-    
             {<div className= "all-books">
                 {allBooks.map(
                     bookData => 
                     <NavLink to={"/book/" + bookData.id}>
                     <BookListing
-                    key={bookData.id}
-                    id={bookData.id}
-                    title={bookData.title}
-                    author={bookData.author}
-                    image={bookData.image}
-                    genre={bookData.genre.name}
-                    setClickedBook ={setClickedBook}
+                        key={bookData.id}
+                        id={bookData.id}
+                        title={bookData.title}
+                        author={bookData.author}
+                        image={bookData.image}
+                        genre={bookData.genre.name}
+                        setClickedBook ={setClickedBook}
                     />
                     </NavLink>
-                    )}
+                )}
             </div>}
-            </>
+        </>
      )
 }
 
