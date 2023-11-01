@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+
 import "./BookDetail.css"
 
-function BookDetail({bookID = 4}) {
+function BookDetail() {
 
-    const [bookImage, setBookImage] = useState('');
-    const [bookTitle, setBookTitle] = useState('');
-    const [bookAuthor, setBookAuthor] = useState('');
-    const [bookYear, setBookYear] = useState('');
-    const [bookPageCount, setBookPageCount] = useState('');
-    const [bookGenre, setBookGenre] = useState('');
-    const [bookBlurb, setBookBlurb] = useState('');
+    const {id} = useParams();
+
+    const [bookImage, setBookImage] = useState('')
+    const [bookTitle, setBookTitle] = useState('')
+    const [bookAuthor, setBookAuthor] = useState('')
+    const [bookYear, setBookYear] = useState('')
+    const [bookPageCount, setBookPageCount] = useState('')
+    const [bookGenre, setBookGenre] = useState('')
+    const [bookBlurb, setBookBlurb] = useState('')
+
+    const[error, setError] = useState(false)
 
     //Fetch the individual book data
     useEffect(function() {
 
-    fetch(`https://book-swap-api.dev.io-academy.uk/api/books/${bookID}`, {
+    fetch(`https://book-swap-api.dev.io-academy.uk/api/books/${id}`, {
         mode: 'cors',
         headers: {
             "Content-Type": "application/json",
@@ -23,34 +29,50 @@ function BookDetail({bookID = 4}) {
         method: "GET",
     }).then(res => res.json())
         .then(bookData => {
-            setBookImage(bookData.data.image);
-            setBookTitle(bookData.data.title);
-            setBookAuthor(bookData.data.author);
-            setBookYear(bookData.data.year);
-            setBookPageCount(bookData.data.page_count);
-            setBookGenre(bookData.data.genre.name);
-            setBookBlurb(bookData.data.blurb);
+
+            // If bookData has a key of data, we know the request worked
+            if('data' in bookData)  {
+                setBookImage(bookData.data.image)
+                setBookTitle(bookData.data.title)
+                setBookAuthor(bookData.data.author)
+                setBookYear(bookData.data.year)
+                setBookPageCount(bookData.data.page_count)
+                setBookGenre(bookData.data.genre.name)
+                setBookBlurb(bookData.data.blurb)
+            } else {
+                // Display an error message
+                setError(true)
+            }
+
+
         })
 
-    }, [])
+    }, [id])
 
     return (
-        <>
-        <h1>Book Swap</h1>
-        <div className="detail-container">
-            <div>
-                <img className="detail-container-image" src={bookImage} alt={bookTitle} />
-            </div>
-            <div className="detail-container-text">
-                <h1>{bookTitle}</h1>
-                <p>{bookAuthor}</p>
-                <p>{bookYear}</p>
-                <p>{bookPageCount}</p>
-                <p>{bookGenre}</p>
-                <p>{bookBlurb}</p>
-            </div>
+        <div>
+            {error ? 
+                <div> 
+                    <p>
+                        "Error: Book not found!"    
+                    </p>
+                </div>
+                :
+                <div className="detail-container">
+                    <div>
+                        <img className="detail-container-image" src={bookImage} alt={bookTitle} />
+                    </div>
+                    <div className="detail-container-text">
+                        <h1>{bookTitle}</h1>
+                        <p>{bookAuthor}</p>
+                        <p>{bookYear}</p>
+                        <p>{bookPageCount}</p>
+                        <p>{bookGenre}</p>
+                        <p>{bookBlurb}</p>
+                    </div>
+                </div>                
+            } 
         </div>
-        </>
     )
 }
 
