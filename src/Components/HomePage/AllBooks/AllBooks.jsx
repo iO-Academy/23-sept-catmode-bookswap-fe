@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom";
 import BookListing from "./BookListing/BookListing"
-import AllBooks from "./AllBooks.css"
+import "./AllBooks.css"
 
-function Allbooks() {
+function AllBooks() {
     
-const [allBooks, setAllBooks] = useState([])
+    const [allBooks, setAllBooks] = useState([])
 
-//Contains the ID of the book that the user selects
-const[clickedBook, setClickedBook] = useState(null);
+    //Contains the ID of the book that the user selects
+    const[clickedBook, setClickedBook] = useState(null);
 
     useEffect( function () {
         fetch('https://book-swap-api.dev.io-academy.uk/api/books')
@@ -26,15 +26,15 @@ const[clickedBook, setClickedBook] = useState(null);
                 {allBooks.map(
                     bookData => 
                     <NavLink to={"/book/" + bookData.id}>
-                    <BookListing
-                        key={bookData.id}
-                        id={bookData.id}
-                        title={bookData.title}
-                        author={bookData.author}
-                        image={bookData.image}
-                        genre={bookData.genre.name}
-                        setClickedBook ={setClickedBook}
-                    />
+                        <BookListing
+                            key={bookData.id}
+                            id={bookData.id}
+                            title={bookData.title}
+                            author={bookData.author}
+                            image={bookData.image}
+                            genre={bookData.genre.name}
+                            setClickedBook ={setClickedBook}
+                        />
                     </NavLink>
                 )}
             </div>}
@@ -42,4 +42,4 @@ const[clickedBook, setClickedBook] = useState(null);
      )
 }
 
-export default Allbooks
+export default AllBooks

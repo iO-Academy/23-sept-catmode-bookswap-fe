@@ -1,6 +1,6 @@
 import "./BookListing.css"
 
-function BookListing({id, image, title, author, genre,}) {
+function BookListing({image, title, author, genre,}) {
     
     return (
         <div className="book">
