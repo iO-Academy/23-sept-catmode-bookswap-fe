@@ -7,7 +7,7 @@ function Nav() {
         <h1>Book Swap</h1>
       </div>
       <div className="links">
-        <NavLink activeClass="active" to="availableBooks">
+        {/* <NavLink activeClass="active" to="availableBooks">
           Available books
         </NavLink>
         <NavLink activeClass="active" to="claimedBooks">
@@ -15,7 +15,7 @@ function Nav() {
         </NavLink>
         <NavLink activeClass="active" to="addBook">
           Add book
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   );
