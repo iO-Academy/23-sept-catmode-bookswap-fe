@@ -10,10 +10,10 @@ function App() {
     <div>
       <BrowserRouter>
         <Nav />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="book/:id" element={<BookDetail />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="book/:id" element={<BookDetail />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
