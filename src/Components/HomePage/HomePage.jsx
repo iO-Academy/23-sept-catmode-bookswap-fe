@@ -1,9 +1,9 @@
-import Allbooks from "./AllBooks/AllBooks"
+import AllBooks from "./AllBooks/AllBooks"
 
 function HomePage() {
     return (
         <div>
-            <Allbooks />
+            <AllBooks />
         </div>
      )
 }
