@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Reviews from "./Reviews/Reviews";
 
 import "./BookDetail.css"
 
@@ -14,6 +15,7 @@ function BookDetail() {
     const [bookPageCount, setBookPageCount] = useState('')
     const [bookGenre, setBookGenre] = useState('')
     const [bookBlurb, setBookBlurb] = useState('')
+    const [reviews, setReviews] = useState([])
     const[error, setError] = useState(false)
 
     //Fetch the individual book data
@@ -36,6 +38,7 @@ function BookDetail() {
                     setBookPageCount(bookData.data.page_count)
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
+                    setReviews(bookData.data.reviews)
                 } else {
                     // Display an error message
                     setError(true)
@@ -63,6 +66,10 @@ function BookDetail() {
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
                         <p>{bookBlurb}</p>
+
+                        <Reviews reviews={reviews} />
+
+
                     </div>
                 </div>                
             } 
