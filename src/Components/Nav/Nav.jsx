@@ -8,13 +8,13 @@ function Nav() {
         <h1>Book Swap</h1>
       </Link>
       <div className="links">
-        <NavLink activeClass="active" to="/">
+        <NavLink activeClass="active" to="/books/available">
           Available books
         </NavLink>
         <NavLink activeClass="active" to="/books/claimed">
           Claimed books
         </NavLink>
-        <NavLink activeClass="active" to="addBook">
+        <NavLink activeClass="active" to="/books/addBook">
           Add book
         </NavLink>
       </div>
