@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react"
 import "./ClaimBook.css"
 
-function ClaimBook({bookID}) { 
+function ClaimBook({bookID, claimedByName}) { 
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
+    function nameChange(event) {
+        setName(event.target.value)
+    }
+
+    function emailChange(event) {
+        setEmail(event.target.value)
+    }
+
+
+
     function submitBookClaim(event) {
         event.preventDefault()
-        setName(name)
-        setEmail(email)
-
+   
         fetch(`https://book-swap-api.dev.io-academy.uk/api/books/claim/${bookID}`, {
             mode: 'cors',
             headers: {
@@ -28,39 +36,46 @@ function ClaimBook({bookID}) {
         }) 
     }
 
+    function unClaimedForm() {
+        return (
+            <form onSubmit={submitBookClaim}>
+                <label htmlFor="name">Name: </label>
+                <input onChange={nameChange} type="text" id="name" />
+
+                <label htmlFor="email">Email: </label>
+                <input onChange={emailChange} type="email" id="email" /> <br/>
+
+                <input type="submit" value="Claim" id="submit"/>
+        
+         </form>
+        )
+    }
 
     return (
-        <form onSubmit={submitBookClaim}>
-            <label htmlFor="name">Name: </label>
-            <input type="text" id="name" />
-
-            <label htmlFor="email">Email: </label>
-            <input type="email" id="email" /> <br/>
-
-            <input type="submit" value="Claim" id="submit"/>
-        
-        </form>
+    <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>
     )
 }
 
-const [claimStatus, setClaimStatus] = useState('')
-comnst [claimFormClass, setClaimFormClass] = useState('')
 
-function displayClaimForm() {
-    if (claimStatus =< 1) {
-        set claimFormClass('open')
-    } else {
-        setClaimFormClass('')
-    }
-}
-
-if (setName.value.length < 5) {
-    formValid = false
-    name
-}
 
 export default ClaimBook
 
+
+//const [claimStatus, setClaimStatus] = useState('')
+//comnst [claimFormClass, setClaimFormClass] = useState('')
+
+//function displayClaimForm() {
+    //  if (claimStatus ==< 1) {
+     //   set claimFormClass('open')
+    //} else {
+     //   setClaimFormClass('')
+   //}
+//}
+
+//if (setName.value.length < 5) {
+ //   formValid = false
+   // name
+//}
 
 
 
