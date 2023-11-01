@@ -1,8 +1,10 @@
+import './BookReview.css'
+
 function BookReview({id, name, rating, review}) {
     return(
-        <div>
-            <p>{name}</p>
-            <p>{rating}</p>
+        <div className="review-container">
+            <p className='review-container-name'>{name}</p>
+            <p>{rating}/5 Stars</p>
             <p>{review}</p>
         </div>    
     )

@@ -1,5 +1,4 @@
 import BookReview from "./BookReview/BookReview"
-
 function Reviews({reviews}) {
     return(
         <div>
@@ -7,21 +6,19 @@ function Reviews({reviews}) {
 
             {console.log(reviews)}
 
-            <>
-                {<div>
-                    {reviews.map(
-                        reviewData => 
-                            <BookReview
-                                key={reviewData.id}
-                                id={reviewData.id}
-                                name={reviewData.name}
-                                rating={reviewData.rating}
-                                review={reviewData.review}
-                            />
+            <div>
+                {reviews.map(
+                    reviewData => 
+                        <BookReview
+                            key={reviewData.id}
+                            id={reviewData.id}
+                            name={reviewData.name}
+                            rating={reviewData.rating}
+                            review={reviewData.review}
+                        />
 
-                    )}
-                </div>}
-            </>
+                )}
+            </div>
 
 
         </div>
