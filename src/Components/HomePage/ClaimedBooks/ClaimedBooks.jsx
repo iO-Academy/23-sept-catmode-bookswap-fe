@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import BookListing from "../AllBooks/BookListing/BookListing";
-import "./ClaimedBooks.css";
+import { useEffect, useState } from "react"
+import BookListing from "../AllBooks/BookListing/BookListing"
+import "./ClaimedBooks.css"
 
 function ClaimedBooks() {
-  const [ClaimedBooks, setClaimedBooks] = useState([]);
+  const [ClaimedBooks, setClaimedBooks] = useState([])
 
   useEffect(function () {
     fetch("https://book-swap-api.dev.io-academy.uk/api/books?claimed=1")
       .then(function (response) {
-        return response.json();
+        return response.json()
       })
       .then(function (bookData) {
-        setClaimedBooks(bookData.data);
-      });
-  }, []);
+        setClaimedBooks(bookData.data)
+      })
+  }, [])
 
   return (
     <div className="claimed-books">
@@ -27,7 +27,7 @@ function ClaimedBooks() {
         />
       ))}
     </div>
-  );
+  )
 }
 
-export default ClaimedBooks;
+export default ClaimedBooks

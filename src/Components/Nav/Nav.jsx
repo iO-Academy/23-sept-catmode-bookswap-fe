@@ -1,5 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
-import "./Nav.css";
+import { Link, NavLink } from "react-router-dom"
+import "./Nav.css"
 
 function Nav() {
   return (
@@ -19,6 +19,6 @@ function Nav() {
         </NavLink>
       </div>
     </nav>
-  );
+  )
 }
-export default Nav;
+export default Nav

@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
-import HomePage from "./components/HomePage/HomePage";
-import "./App.css";
-import ClaimedBooks from "./Components/HomePage/ClaimedBooks/ClaimedBooks";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Nav from "./components/Nav/Nav"
+import HomePage from "./components/HomePage/HomePage"
+import "./App.css"
+import ClaimedBooks from "./Components/HomePage/ClaimedBooks/ClaimedBooks"
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
