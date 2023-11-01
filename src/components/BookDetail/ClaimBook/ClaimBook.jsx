@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import "./ClaimBook.css"
 
-function ClaimBook({bookID}) {
+function ClaimBook({bookID}) { 
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
     function submitBookClaim(event) {
         event.preventDefault()
+        setName(name)
+        setEmail(email)
 
         fetch(`https://book-swap-api.dev.io-academy.uk/api/books/claim/${bookID}`, {
             mode: 'cors',
@@ -41,6 +43,24 @@ function ClaimBook({bookID}) {
     )
 }
 
+const [claimStatus, setClaimStatus] = useState('')
+comnst [claimFormClass, setClaimFormClass] = useState('')
+
+function displayClaimForm() {
+    if (claimStatus =< 1) {
+        set claimFormClass('open')
+    } else {
+        setClaimFormClass('')
+    }
+}
+
+if (setName.value.length < 5) {
+    formValid = false
+    name
+}
+
 export default ClaimBook
+
+
 
 
