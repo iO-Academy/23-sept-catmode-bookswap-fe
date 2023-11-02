@@ -4,9 +4,9 @@ import "./Nav.css"
 function Nav() {
   return (
     <nav className="navigation">
-      <Link to="/">
+      <NavLink to="/books/available">
         <h1>Book Swap</h1>
-      </Link>
+      </NavLink>
       <div className="links">
         <NavLink activeClass="active" to="/books/available">
           Available books
