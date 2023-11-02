@@ -12,7 +12,7 @@ function ReviewSummary ({reviews}) {
     reviewAverage = Math.round((reviewTally / reviewCount) * 10) / 10
 
     return (
-        <a>{reviewCount} reviews - {reviewAverage}/5 stars</a>
+        <p><a className="link" href="#reviews">{reviewCount} reviews</a> - {reviewAverage}/5 stars</p>
     )
 }
 

@@ -68,7 +68,6 @@ function BookDetail() {
                         <p>{bookGenre}</p>
                         <ReviewSummary reviews={reviews} />
                         <p>{bookBlurb}</p>
-
                         <Reviews reviews={reviews} />
                     </div>
                 </div>                

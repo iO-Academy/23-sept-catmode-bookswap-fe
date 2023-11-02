@@ -12,6 +12,9 @@
 .detail-container-text{
     margin-top: 5vh;
 }
+.test{
+    min-height: 1000px;
+}
 @media screen and (max-width: 1090px){
     .detail-container-image {
         margin-top: 2vh;
