@@ -66,7 +66,8 @@ function BookDetail() {
                         <p>{bookYear}</p>
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
-                        <ReviewSummary reviews={reviews} />
+                        {/* <ReviewSummary reviews={reviews} /> */}
+                        {reviews != [] && <ReviewSummary reviews={reviews} />} 
                         <p>{bookBlurb}</p>
 
                         <Reviews reviews={reviews} />
