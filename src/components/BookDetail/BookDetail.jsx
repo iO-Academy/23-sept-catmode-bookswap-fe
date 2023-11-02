@@ -40,8 +40,6 @@ function BookDetail() {
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
                     setReviews(bookData.data.reviews)
-
-                    console.log(bookData.data.reviews)
                 } else {
                     // Display an error message
                     setError(true)
@@ -68,7 +66,7 @@ function BookDetail() {
                         <p>{bookYear}</p>
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
-                        <ReviewSummary />
+                        <ReviewSummary reviews={reviews} />
                         <p>{bookBlurb}</p>
 
                         <Reviews reviews={reviews} />
