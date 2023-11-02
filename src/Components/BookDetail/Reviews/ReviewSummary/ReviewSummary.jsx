@@ -1,12 +1,12 @@
 function ReviewSummary ({reviews}) {
 
-    let reviewCount = {reviews}.reviews.length;
-    let reviewArray = {reviews}.reviews;
-    let reviewTally = 0;
-    let reviewAverage = 0;
+    let reviewCount = {reviews}.reviews.length
+    let reviewArray = {reviews}.reviews
+    let reviewTally = 0
+    let reviewAverage = 0
 
     reviewArray.forEach(review => {
-        reviewTally += review.rating;
+        reviewTally += review.rating
     })
 
     // Handle 0 review scenario, to fix NaN dividing by 0

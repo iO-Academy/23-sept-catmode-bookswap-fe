@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import Reviews from "./Reviews/Reviews";
+import Reviews from "./Reviews/Reviews"
 
 import "./BookDetail.css"
-import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary";
+import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary"
 
 function BookDetail() {
 
