@@ -68,8 +68,6 @@ function BookDetail() {
                         <p>{bookBlurb}</p>
 
                         <Reviews reviews={reviews} />
-
-
                     </div>
                 </div>                
             } 
