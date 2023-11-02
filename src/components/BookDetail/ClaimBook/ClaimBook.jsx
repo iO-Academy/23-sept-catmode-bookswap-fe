@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./ClaimBook.css"
+import ReturnBook from "../ReturnBook/ReturnBook"
 
 function ClaimBook({bookID, claimedByName, setClaimedByName}) { 
     
@@ -67,7 +68,7 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
 
     return (
     <>
-     <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>   
+     <div className="message">{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>   
 
      <p className="claim-book-error">{errorMessage}</p>
     </>

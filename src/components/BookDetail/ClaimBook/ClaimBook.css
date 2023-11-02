@@ -16,3 +16,9 @@ form {
 .claim-book-error{
     color: red;
 }
+
+@media screen and (Max-width: 850px) {
+    .message {
+        text-align: center;
+    }   
+}   
