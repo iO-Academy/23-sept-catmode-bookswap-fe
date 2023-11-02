@@ -1,0 +1,58 @@
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  margin: 0 auto;
+  margin-top: 5%;
+  gap: 20px;
+  font-size: large;
+}
+
+.add-book-form label {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.add-book-form button {
+  width: 100%;
+  height: 30px;
+  font-size: larger;
+}
+
+.add-book-form input,
+.add-book-form textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.add-book-form textarea {
+  height: 130px;
+}
+
+.add-book-form select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid inherit;
+  border-radius: 4px;
+  font-size: inherit;
+  color: inherit;
+  background-color: white;
+}
+
+.add-book-form select option {
+  background-color: white;
+  color: inherit;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+}
+
+.succes-message {
+  color: darkgreen;
+  font-size: x-large;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20px;
+}
