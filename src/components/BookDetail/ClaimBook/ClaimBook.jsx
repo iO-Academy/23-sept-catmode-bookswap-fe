@@ -51,15 +51,17 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
 
     function unClaimedForm() {
         return (
-            <form onSubmit={submitBookClaim}>
-                <label htmlFor="name">Name: </label>
-                <input onChange={nameChange} type="text" id="name" />
+            <div className="form-container">
+                 <form onSubmit={submitBookClaim}>
+                    <label htmlFor="name">Name: </label>
+                    <input onChange={nameChange} type="text" id="name" />
 
-                <label htmlFor="email">Email: </label>
-                <input onChange={emailChange} type="email" id="email" /> <br/>
+                    <label htmlFor="email">Email: </label>
+                    <input onChange={emailChange} type="email" id="email" /> <br/>
 
-                <input type="submit" value="Claim" id="submit"/>
-            </form>
+                    <input type="submit" value="Claim" id="submit"/>
+                </form>
+            </div>
         )
     }
 
