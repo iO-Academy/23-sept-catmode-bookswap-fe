@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import Reviews from "./Reviews/Reviews";
 
 import "./BookDetail.css"
+import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary";
 
 function BookDetail() {
 
@@ -39,6 +40,8 @@ function BookDetail() {
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
                     setReviews(bookData.data.reviews)
+
+                    console.log(bookData.data.reviews)
                 } else {
                     // Display an error message
                     setError(true)
@@ -65,6 +68,7 @@ function BookDetail() {
                         <p>{bookYear}</p>
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
+                        <ReviewSummary />
                         <p>{bookBlurb}</p>
 
                         <Reviews reviews={reviews} />
