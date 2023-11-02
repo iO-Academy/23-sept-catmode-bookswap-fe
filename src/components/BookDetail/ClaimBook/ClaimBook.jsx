@@ -68,7 +68,7 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
 
     return (
     <>
-     <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>   
+     <div className="message">{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>   
 
      <p className="claim-book-error">{errorMessage}</p>
     </>
