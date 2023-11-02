@@ -5,6 +5,7 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
 
     function nameChange(event) {
         setName(event.target.value)
@@ -13,8 +14,6 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
     function emailChange(event) {
         setEmail(event.target.value)
     }
-
-
 
     function submitBookClaim(event) {
             event.preventDefault()
@@ -30,12 +29,24 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
                 'email': email,
                 'name': name
             })
-        }).then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setClaimedByName(name)
-        }
-        ) 
+        }).then((res) =>
+            {
+                if (res.ok) { 
+                    return res.json()
+                    .then(data => {
+                        setClaimedByName(name)
+                        setErrorMessage("")
+                    }
+                    )
+                   }
+                else {
+                    res.json()
+                    .then(data => {
+                        setErrorMessage(data.message)           
+                    })
+                }
+            }
+        )   
     }
 
     function unClaimedForm() {
@@ -48,36 +59,17 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
                 <input onChange={emailChange} type="email" id="email" /> <br/>
 
                 <input type="submit" value="Claim" id="submit"/>
-        
-         </form>
+            </form>
         )
     }
 
     return (
-    
-    <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>
+    <>
+     <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>   
+
+     <p className="claim-book-error">{errorMessage}</p>
+    </>
     )
 }
 
-
 export default ClaimBook
-
-
-//const [claimStatus, setClaimStatus] = useState('')
-//comnst [claimFormClass, setClaimFormClass] = useState('')
-
-//function displayClaimForm() {
-    //  if (claimStatus ==< 1) {
-     //   set claimFormClass('open')
-    //} else {
-     //   setClaimFormClass('')
-   //}
-//}
-
-//if (setName.value.length < 5) {
- //   formValid = false
-   // name
-//}
-
-
-

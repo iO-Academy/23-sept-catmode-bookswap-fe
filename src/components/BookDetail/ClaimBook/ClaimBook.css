@@ -5,3 +5,7 @@ form {
     padding: 5px;
     width: 50%;
 }
+
+.claim-book-error{
+    color: red;
+}

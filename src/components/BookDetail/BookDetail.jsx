@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import "./BookDetail.css"
 import ClaimBook from "./ClaimBook/ClaimBook";
 
-function BookDetail({bookID = 37}) {
+function BookDetail({bookID = 12}) {
 
     const [bookImage, setBookImage] = useState('');
     const [bookTitle, setBookTitle] = useState('');
