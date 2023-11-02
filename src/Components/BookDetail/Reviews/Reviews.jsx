@@ -1,11 +1,9 @@
 import BookReview from "./BookReview/BookReview"
+
 function Reviews({reviews}) {
     return(
         <div>
             <h2>Reviews</h2>
-
-            {console.log(reviews)}
-
             <div>
                 {reviews.map(
                     reviewData => 
@@ -16,13 +14,9 @@ function Reviews({reviews}) {
                             rating={reviewData.rating}
                             review={reviewData.review}
                         />
-
                 )}
             </div>
-
-
         </div>
     )
 }
-
 export default Reviews
