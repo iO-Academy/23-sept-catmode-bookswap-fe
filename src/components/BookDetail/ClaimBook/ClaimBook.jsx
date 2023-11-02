@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./ClaimBook.css"
 
 function ClaimBook({bookID, claimedByName, setClaimedByName}) { 

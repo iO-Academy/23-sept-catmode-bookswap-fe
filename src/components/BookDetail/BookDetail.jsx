@@ -44,7 +44,7 @@ function BookDetail() {
                     setError(true)
                 }
             })
-    }, [id, claimedByName])
+    }, [id])
 
     return (
         <div>
