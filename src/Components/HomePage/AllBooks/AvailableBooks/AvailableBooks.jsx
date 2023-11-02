@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom"
 import BookListing from "../BookListing/BookListing"
 import "./AvailableBooks.css"
 
@@ -18,13 +19,15 @@ function AvailableBooks() {
   return (
     <div className="available-books">
       {availableBooks.map((availableBook) => (
-        <BookListing
-          key={availableBook.id}
-          title={availableBook.title}
-          author={availableBook.author}
-          image={availableBook.image}
-          genre={availableBook.genre.name}
-        />
+        <NavLink to={"/book/" + availableBook.id} key={availableBook.id}>
+          <BookListing
+            id={availableBook.id}
+            title={availableBook.title}
+            author={availableBook.author}
+            image={availableBook.image}
+            genre={availableBook.genre.name}
+          />
+        </NavLink>
       ))}
     </div>
   )

@@ -1,14 +1,14 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "./Nav.css"
 
 function Nav() {
   return (
     <nav className="navigation">
-      <NavLink to="/books/available">
+      <NavLink to="/">
         <h1>Book Swap</h1>
       </NavLink>
       <div className="links">
-        <NavLink activeClass="active" to="/books/available">
+        <NavLink activeClass="active" to="/">
           Available books
         </NavLink>
         <NavLink activeClass="active" to="/books/claimed">
