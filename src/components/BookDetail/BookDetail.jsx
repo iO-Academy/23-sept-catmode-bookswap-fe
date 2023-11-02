@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import "./BookDetail.css"
 import ClaimBook from "./ClaimBook/ClaimBook";
 
-function BookDetail({bookID = 40}) {
+function BookDetail({bookID = 37}) {
 
     const [bookImage, setBookImage] = useState('');
     const [bookTitle, setBookTitle] = useState('');
@@ -12,6 +12,7 @@ function BookDetail({bookID = 40}) {
     const [bookGenre, setBookGenre] = useState('');
     const [bookBlurb, setBookBlurb] = useState('');
     const [claimedByName, setClaimedByName] = useState('');
+
 
     //Fetch the individual book data
     useEffect(function() {
@@ -35,7 +36,7 @@ function BookDetail({bookID = 40}) {
             setClaimedByName(bookData.data.claimed_by_name)
         })
 
-    }, [])
+    }, [claimedByName])
 
     return (
         <>
@@ -50,7 +51,7 @@ function BookDetail({bookID = 40}) {
                 <p>{bookYear}</p>
                 <p>{bookPageCount}</p>
                 <p>{bookGenre}</p>
-                <ClaimBook bookID={bookID} claimedByName={claimedByName} />
+                <ClaimBook bookID={bookID} claimedByName={claimedByName} setClaimedByName={setClaimedByName} />
                 <p>{bookBlurb}</p>
             </div>
         </div>

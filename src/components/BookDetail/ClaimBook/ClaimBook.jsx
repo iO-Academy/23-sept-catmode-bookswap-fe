@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./ClaimBook.css"
 
-function ClaimBook({bookID, claimedByName}) { 
+function ClaimBook({bookID, claimedByName, setClaimedByName}) { 
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -17,7 +17,7 @@ function ClaimBook({bookID, claimedByName}) {
 
 
     function submitBookClaim(event) {
-        event.preventDefault()
+            event.preventDefault()
    
         fetch(`https://book-swap-api.dev.io-academy.uk/api/books/claim/${bookID}`, {
             mode: 'cors',
@@ -33,7 +33,9 @@ function ClaimBook({bookID, claimedByName}) {
         }).then(res => res.json())
         .then(data => {
             console.log(data)
-        }) 
+            setClaimedByName(name)
+        }
+        ) 
     }
 
     function unClaimedForm() {
@@ -52,10 +54,10 @@ function ClaimBook({bookID, claimedByName}) {
     }
 
     return (
+    
     <div>{ claimedByName == null ? unClaimedForm() : `Claimed by ${claimedByName}` }</div>
     )
 }
-
 
 
 export default ClaimBook
