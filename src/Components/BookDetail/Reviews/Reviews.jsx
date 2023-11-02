@@ -2,7 +2,7 @@ import BookReview from "./BookReview/BookReview"
 
 function Reviews({reviews}) {
     return(
-        <div>
+        <div id="reviews">
             <h2>Reviews</h2>
             <div>
                 {reviews.map(

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import Reviews from "./Reviews/Reviews";
+import Reviews from "./Reviews/Reviews"
 
 import "./BookDetail.css"
+import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary"
 
 function BookDetail() {
 
@@ -65,8 +66,9 @@ function BookDetail() {
                         <p>{bookYear}</p>
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
+                        {/* <ReviewSummary reviews={reviews} /> */}
+                        {reviews != [] && <ReviewSummary reviews={reviews} />} 
                         <p>{bookBlurb}</p>
-
                         <Reviews reviews={reviews} />
                     </div>
                 </div>                
