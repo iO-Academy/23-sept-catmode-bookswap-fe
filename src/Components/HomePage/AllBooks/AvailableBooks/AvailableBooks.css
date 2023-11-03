@@ -1,0 +1,26 @@
+.available-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 80px;
+}
+
+@media screen and (max-width: 850px) {
+  .available-books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .available-books .img {
+    max-height: 50vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .available-books {
+    padding: 10px;
+  }
+}

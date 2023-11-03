@@ -38,5 +38,6 @@
   z-index: 1000;
 }
 .active {
-  background-color: red;
+  background-color: aquamarine;
+  padding: 3px;
 }
