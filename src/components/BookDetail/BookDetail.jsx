@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 
 import "./BookDetail.css"
 import ClaimBook from "./ClaimBook/ClaimBook";
+import ReturnBook from "./ReturnBook/ReturnBook";
 
 function BookDetail() {
 
@@ -66,6 +67,7 @@ function BookDetail() {
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
                         <ClaimBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} />
+                        <ReturnBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} />
                         <p>{bookBlurb}</p>
                     </div>
                 </div>                
