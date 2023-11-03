@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import BookListing from "../AllBooks/BookListing/BookListing"
 import "./ClaimedBooks.css"
+import { NavLink } from "react-router-dom"
 
 function ClaimedBooks() {
   const [ClaimedBooks, setClaimedBooks] = useState([])
@@ -18,13 +19,15 @@ function ClaimedBooks() {
   return (
     <div className="claimed-books">
       {ClaimedBooks.map((claimedBook) => (
-        <BookListing
-          key={claimedBook.id}
-          title={claimedBook.title}
-          author={claimedBook.author}
-          image={claimedBook.image}
-          genre={claimedBook.genre.name}
-        />
+        <NavLink to={"/book/" + claimedBook.id} key={claimedBook.id}>
+          <BookListing
+            key={claimedBook.id}
+            title={claimedBook.title}
+            author={claimedBook.author}
+            image={claimedBook.image}
+            genre={claimedBook.genre.name}
+          />
+        </NavLink>
       ))}
     </div>
   )
