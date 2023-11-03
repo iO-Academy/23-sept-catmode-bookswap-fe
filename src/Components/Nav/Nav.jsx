@@ -16,9 +16,9 @@ function Nav() {
         <NavLink activeClass="active" to="/books/claimed">
           Claimed books
         </NavLink>
-        {/* <NavLink activeClass="active" to="/books/add">
+        <NavLink activeClass="active" to="/books/add">
           Add book
-        </NavLink> */}
+        </NavLink>
       </div>
       <a href={"#top"}><img className="arrow" src={"src/assets/up-arrow.png"} alt="top of the page" /></a>
     </nav>

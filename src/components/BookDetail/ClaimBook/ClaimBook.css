@@ -1,24 +1,24 @@
 .form-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    padding: 5px;
-    width: 50%;
-    min-width: 200px;
-}
-@media screen and (max-width: 850px){ 
-    .form-container {
-        display: flex;
-        justify-content: center;
-    }
-}
-.claim-book-error{
-    color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px;
+  width: 50%;
+  min-width: 200px;
 }
 
-@media screen and (Max-width: 850px) {
-    .message {
-        text-align: center;
-    }   
-}   
+.claim-book-error {
+  color: red;
+}
+
+@media screen and (max-width: 850px) {
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .message {
+    text-align: center;
+  }
+}
