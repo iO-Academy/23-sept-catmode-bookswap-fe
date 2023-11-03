@@ -9,10 +9,12 @@
     border-radius: 15px;
     width: 400px;
 }
+
 .book img {
     width: 300px;
     border-radius: 8px;
 }
+
 @media screen and (max-width: 600px) {
     .book {
         width: 350px;

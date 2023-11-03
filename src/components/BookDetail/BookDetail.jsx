@@ -72,13 +72,8 @@ function BookDetail() {
                     </div>
                 </div>                
             } 
-
-
         </div>
-
     )
-
-
 }
 
 export default BookDetail
