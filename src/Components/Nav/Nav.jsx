@@ -3,10 +3,12 @@ import "./Nav.css"
 
 function Nav() {
   return (
-    <nav className="navigation">
-      <NavLink to="/">
-        <h1>Book Swap</h1>
-      </NavLink>
+    <nav id="top" className="navigation">
+      <div className="logo">
+        <NavLink to="/">
+          <h1>Book Swap</h1>
+        </NavLink>
+      </div>
       <div className="links">
         <NavLink activeClass="active" to="/">
           Available books
@@ -18,6 +20,7 @@ function Nav() {
           Add book
         </NavLink>
       </div>
+      <a href={"#top"}><img className="arrow" src={"src/assets/up-arrow.png"} alt="top of the page" /></a>
     </nav>
   )
 }

@@ -8,7 +8,7 @@ import "./App.css"
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <BrowserRouter>
         <Nav />
         <Routes>
