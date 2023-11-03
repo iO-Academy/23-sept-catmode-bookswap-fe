@@ -8,13 +8,17 @@
   min-width: 200px;
 }
 
+.claim-book-error {
+  color: red;
+}
+
 @media screen and (max-width: 850px) {
   .form-container {
     display: flex;
     justify-content: center;
   }
-}
 
-.claim-book-error {
-  color: red;
+  .message {
+    text-align: center;
+  }
 }
