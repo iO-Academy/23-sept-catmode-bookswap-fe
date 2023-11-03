@@ -2,7 +2,7 @@ import Allbooks from "./AllBooks/AllBooks"
 
 function HomePage() {
     return (
-        <div>
+        <div >
             <Allbooks />
         </div>
      )

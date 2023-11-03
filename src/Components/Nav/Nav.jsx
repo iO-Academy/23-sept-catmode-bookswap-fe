@@ -2,8 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
 function Nav() {
   return (
-    <nav className="navigation">
-      <div>
+    <nav id="top" className="navigation">
+      <div className="logo">
         <h1>Book Swap</h1>
       </div>
       <div className="links">
@@ -17,6 +17,7 @@ function Nav() {
           Add book
         </NavLink>
       </div>
+      <a href={"#top"}><img className="arrow" src={"src/assets/up-arrow.png"} alt="top of the page" /></a>
     </nav>
   );
 }

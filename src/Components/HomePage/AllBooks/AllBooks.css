@@ -1,8 +1,14 @@
 .all-books {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 100px;
     padding: 80px;
+    justify-content: center;
+}
+
+.nav {
+    color: white;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 850px){
@@ -12,6 +18,7 @@
         align-items: center;
     }
 }
+
 @media screen and (max-width: 850px){
     .all-books img {
         max-height: 50vh;

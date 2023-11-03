@@ -5,12 +5,38 @@
   align-items: center;
   padding: 10px;
 }
-
 .links {
   display: flex;
   gap: 10px;
+  margin-left: 65vw;
 }
-
+@media screen and (max-width: 1485px){
+  .links {
+    margin-left: 55vw;
+  }
+}
+@media screen and (max-width: 1155px){
+  .links {
+    margin-left: 40vw;
+  }
+}
+@media screen and (max-width: 960px){
+  .links {
+    margin-left: 25vw;
+  }
+}
+@media screen and (max-width: 700px){
+  .links {
+    margin-left: 5vw;
+  }
+}
+.arrow {
+  display: inline-block;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+}
 .active {
   background-color: red;
 }
