@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Reviews from "./Reviews/Reviews"
 
 import "./BookDetail.css"
-import ClaimBook from "./ClaimBook/ClaimBook";
-import ReturnBook from "./ReturnBook/ReturnBook";
+import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary"
+import ClaimBook from "./ClaimBook/ClaimBook"
+import ReturnBook from "./ReturnBook/ReturnBook"
 
 function BookDetail() {
 
     const {id} = useParams();
 
-    const [bookImage, setBookImage] = useState('');
-    const [bookTitle, setBookTitle] = useState('');
-    const [bookAuthor, setBookAuthor] = useState('');
-    const [bookYear, setBookYear] = useState('');
-    const [bookPageCount, setBookPageCount] = useState('');
-    const [bookGenre, setBookGenre] = useState('');
-    const [bookBlurb, setBookBlurb] = useState('');
-    const [claimedByName, setClaimedByName] = useState('');
+    const [bookImage, setBookImage] = useState('')
+    const [bookTitle, setBookTitle] = useState('')
+    const [bookAuthor, setBookAuthor] = useState('')
+    const [bookYear, setBookYear] = useState('')
+    const [bookPageCount, setBookPageCount] = useState('')
+    const [bookGenre, setBookGenre] = useState('')
+    const [bookBlurb, setBookBlurb] = useState('')
+    const [reviews, setReviews] = useState([])
+    const [claimedByName, setClaimedByName] = useState('')
     const[error, setError] = useState(false)
 
     //Fetch the individual book data
@@ -39,6 +42,7 @@ function BookDetail() {
                     setBookPageCount(bookData.data.page_count)
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
+                    setReviews(bookData.data.reviews)
                     setClaimedByName(bookData.data.claimed_by_name)
                 } else {
                     // Display an error message
@@ -66,9 +70,11 @@ function BookDetail() {
                         <p>{bookYear}</p>
                         <p>{bookPageCount}</p>
                         <p>{bookGenre}</p>
+                        {reviews != [] && <ReviewSummary reviews={reviews} />}
                         <ClaimBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} />
-                        <ReturnBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} />
+                        <ReturnBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} /> 
                         <p>{bookBlurb}</p>
+                        <Reviews reviews={reviews} />
                     </div>
                 </div>                
             } 

@@ -1,0 +1,13 @@
+.review-container-name {
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 855px){
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: left;
+    }
+}
