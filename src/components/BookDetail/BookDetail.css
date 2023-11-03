@@ -33,7 +33,7 @@
         flex-direction: column;
         align-items: center;
         text-align: start;
-        margin: 15px;
+        margin: 5px;
         padding: 5px;
     } 
 
@@ -43,6 +43,10 @@
     
     .detail-container-text {
         margin-top: 0;
+    }
+
+    .detail-container-text  p, .detail-container-text  h1 {
+        text-align: center;
     }
 } 
 
