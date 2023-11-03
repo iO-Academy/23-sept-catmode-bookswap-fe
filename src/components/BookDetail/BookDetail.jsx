@@ -42,10 +42,7 @@ function BookDetail() {
                 // Display an error message
                 setError(true)
             }
-
-
         })
-
     }, [id])
 
     return (
