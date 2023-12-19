@@ -13,7 +13,7 @@ function ReturnBook({ claimedByName, bookID, setClaimedByName }) {
     function submitBookReturn(event) {
         event.preventDefault()
 
-        fetch(`https://book-swap-api.dev.io-academy.uk/api/books/return/${bookID}`, {
+        fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books/return/${bookID}`, {
             mode: 'cors',
             headers: {
                 "Content-Type": "application/json",

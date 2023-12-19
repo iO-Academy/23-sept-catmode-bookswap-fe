@@ -7,7 +7,14 @@ function ClaimedBooks() {
   const [ClaimedBooks, setClaimedBooks] = useState([])
 
   useEffect(function () {
-    fetch("https://book-swap-api.dev.io-academy.uk/api/books?claimed=1")
+    fetch("https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books?claimed=1",{
+        mode: 'cors',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        method: "GET",
+      })
       .then(function (response) {
         return response.json()
       })

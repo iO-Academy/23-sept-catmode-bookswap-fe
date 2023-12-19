@@ -18,15 +18,14 @@ function AddNewBook() {
   function AddBook(event) {
     event.preventDefault()
 
-    fetch("https://book-swap-api.dev.io-academy.uk/api/books", {
+    fetch("https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-    })
-      .then((resp) => {
+    }).then((resp) => {
         return resp.json()
       })
       .then((response) => {
