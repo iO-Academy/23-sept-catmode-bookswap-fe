@@ -7,8 +7,14 @@ function AvailableBooks() {
   const [availableBooks, setAvailableBooks] = useState([])
 
   useEffect(function () {
-    fetch("https://book-swap-api.dev.io-academy.uk/api/books?claimed=0")
-      .then(function (response) {
+    fetch("https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books?claimed=0", {
+        mode: 'cors',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        method: "GET",
+      }).then(function (response) {
         return response.json()
       })
       .then(function (bookData) {

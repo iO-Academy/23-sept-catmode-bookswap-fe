@@ -19,7 +19,7 @@ function ClaimBook({bookID, claimedByName, setClaimedByName}) {
     function submitBookClaim(event) {
             event.preventDefault()
    
-        fetch(`https://book-swap-api.dev.io-academy.uk/api/books/claim/${bookID}`, {
+        fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books/claim/${bookID}`, {
             mode: 'cors',
             headers: {
                 "Content-Type": "application/json",

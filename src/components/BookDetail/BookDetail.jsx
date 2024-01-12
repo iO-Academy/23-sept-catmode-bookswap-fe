@@ -24,7 +24,7 @@ function BookDetail() {
 
     //Fetch the individual book data
     useEffect(function() {
-        fetch(`https://book-swap-api.dev.io-academy.uk/api/books/${id}`, {
+        fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books/${id}`, {
             mode: 'cors',
             headers: {
                 "Content-Type": "application/json",
