@@ -6,6 +6,7 @@ import "./BookDetail.css"
 import ReviewSummary from "./Reviews/ReviewSummary/ReviewSummary"
 import ClaimBook from "./ClaimBook/ClaimBook"
 import ReturnBook from "./ReturnBook/ReturnBook"
+import ReviewAdd from "./Reviews/ReviewAdd/ReviewAdd"
 
 function BookDetail() {
 
@@ -75,6 +76,7 @@ function BookDetail() {
                         <ReturnBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} /> 
                         <p>{bookBlurb}</p>
                         <Reviews reviews={reviews} />
+                        <ReviewAdd bookID={id} /> 
                     </div>
                 </div>                
             } 
