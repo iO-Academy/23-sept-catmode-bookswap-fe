@@ -1,0 +1,14 @@
+.review-add-error {
+    color: red;
+  }
+
+.review-add-success {
+    color: green;
+  }
+
+#review-add-textbox {
+    max-width: 340px;
+    min-width: 190px;
+    min-height: 100px;
+    resize:none;
+}
