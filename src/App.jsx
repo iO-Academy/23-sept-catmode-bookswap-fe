@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Nav from "./components/Nav/Nav"
-import BookDetail from "./components/BookDetail/BookDetail"
+import Nav from "./Components/Nav/Nav"
+import BookDetail from "./Components/BookDetail/BookDetail"
 import ClaimedBooks from "./Components/HomePage/ClaimedBooks/ClaimedBooks"
 import AvailableBooks from "./Components/HomePage/AllBooks/AvailableBooks/AvailableBooks"
 import AddNewBook from "./Components/HomePage/AddNewBook/AddNewBook"
