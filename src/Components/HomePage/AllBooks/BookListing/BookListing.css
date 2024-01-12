@@ -1,0 +1,22 @@
+.book {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(141, 141, 141, 0.5);
+    box-shadow: 2px 2px 5px black;
+    border-radius: 15px;
+    width: 400px;
+}
+
+.book img {
+    width: 300px;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .book {
+        width: 350px;
+    }
+}
