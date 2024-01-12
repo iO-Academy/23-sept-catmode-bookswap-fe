@@ -2,7 +2,7 @@ import "./ReviewAdd.css"
 
 import { useState } from "react"
 
-function ReviewAdd({bookID}) { 
+function ReviewAdd({bookID, reviewCount, setReviewCount}) { 
     
     const [name, setName] = useState('')
     const [rating, setRating] = useState('')
@@ -46,6 +46,8 @@ function ReviewAdd({bookID}) {
 
                         setErrorMessage("")
                         setSuccessMessage("Review Added!")
+
+                        setReviewCount(reviewCount + 1)
                     }
                     )
                    }

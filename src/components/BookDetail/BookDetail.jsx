@@ -20,8 +20,9 @@ function BookDetail() {
     const [bookGenre, setBookGenre] = useState('')
     const [bookBlurb, setBookBlurb] = useState('')
     const [reviews, setReviews] = useState([])
+    const [reviewCount, setReviewCount] = useState('')
     const [claimedByName, setClaimedByName] = useState('')
-    const[error, setError] = useState(false)
+    const [error, setError] = useState(false)
 
     //Fetch the individual book data
     useEffect(function() {
@@ -44,13 +45,15 @@ function BookDetail() {
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
                     setReviews(bookData.data.reviews)
+                    console.log(`Review count: ${bookData.data.reviews.length}`)
+                    setReviewCount(bookData.data.reviews.length)
                     setClaimedByName(bookData.data.claimed_by_name)
                 } else {
                     // Display an error message
                     setError(true)
                 }
             })
-    }, [id])
+    }, [id, reviewCount])
 
     return (
         <div>
@@ -76,7 +79,7 @@ function BookDetail() {
                         <ReturnBook bookID={id} claimedByName={claimedByName} setClaimedByName={setClaimedByName} /> 
                         <p>{bookBlurb}</p>
                         <Reviews reviews={reviews} />
-                        <ReviewAdd bookID={id} /> 
+                        <ReviewAdd bookID={id} reviewCount={reviewCount} setReviewCount={setReviewCount} /> 
                     </div>
                 </div>                
             } 
