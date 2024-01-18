@@ -10,13 +10,13 @@ function Nav() {
         </NavLink>
       </div>
       <div className="links">
-        <NavLink activeClass="active" to="/">
+        <NavLink activeclass="active" to="/">
           Available books
         </NavLink>
-        <NavLink activeClass="active" to="/books/claimed">
+        <NavLink activeclass="active" to="/books/claimed">
           Claimed books
         </NavLink>
-        <NavLink activeClass="active" to="/books/add">
+        <NavLink activeclass="active" to="/books/add">
           Add book
         </NavLink>
       </div>
