@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav id="top" className="navigation">
       <div className="logo">
-        <NavLink to="/">
+        <NavLink activeClass="logo" to="/">
           <h1>Book Swap</h1>
         </NavLink>
       </div>
