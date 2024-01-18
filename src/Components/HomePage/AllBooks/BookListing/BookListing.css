@@ -8,11 +8,22 @@
     box-shadow: 2px 2px 5px black;
     border-radius: 15px;
     width: 400px;
+    min-height: 350px;
 }
 
 .book img {
-    width: 300px;
     border-radius: 8px;
+    height: 140px;
+    max-width: 390px;
+}
+
+.book-summary-info {
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+.book-summary-text {
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {

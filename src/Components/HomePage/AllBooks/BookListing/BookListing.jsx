@@ -4,9 +4,11 @@ function BookListing({ id, image, title, author, genre }) {
   return (
     <div className="book">
       <img src={image} />
-      <h3>Title: {title}</h3>
-      <p>Author: {author}</p>
-      <p>Genre: {genre}</p>
+      <div className="book-summary-info">
+        <h3 className="book-summary-text">Title: {title}</h3>
+        <p className="book-summary-text">Author: {author}</p>
+        <p className="book-summary-text">Genre: {genre}</p>
+      </div>
     </div>
   )
 }
