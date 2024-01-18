@@ -6,7 +6,7 @@ function Filter() {
         <form>
             <div className="filter">
                 <div>
-                    <label for="genre">Genre</label>
+                    <label htmlFor="genre">Genre</label>
                     <select name="genre">
                         <option value="">All Genres</option>
                         <option value="1">Thriller</option>
@@ -17,7 +17,7 @@ function Filter() {
                 </div>        
             
                 <div>
-                    <label for="search">Search</label>
+                    <label htmlFor="search">Search</label>
                     <input
                     name="search"
                     type="text"
