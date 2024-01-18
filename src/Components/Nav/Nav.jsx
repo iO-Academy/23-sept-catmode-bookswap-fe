@@ -20,7 +20,7 @@ function Nav() {
           Add book
         </NavLink>
       </div>
-      <a href={"#top"}><img className="arrow" src={"src/assets/up-arrow.png"} alt="top of the page" /></a>
+      <a href={"#top"}><img className="arrow" src={"/src/assets/up-arrow.png"} alt="top of the page" /></a>
     </nav>
   )
 }
