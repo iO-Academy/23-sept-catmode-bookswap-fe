@@ -1,6 +1,15 @@
 import "./Filter.css"
+import { useSearchParams } from "react-router-dom";
 
 function Filter() {
+
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    let searchValue = "";
+    if(typeof searchParams.get("search") !== 'undefined'  && searchParams.get("search") != null && searchParams.get("search") != "" ) {
+        searchValue = searchParams.get("search");
+      }
+    console.log("Search Value: " + searchValue);
 
     return (
         <form>
@@ -21,6 +30,7 @@ function Filter() {
                     <input
                     name="search"
                     type="text"
+                    defaultValue={searchValue}
                     />
                 </div>  
 
