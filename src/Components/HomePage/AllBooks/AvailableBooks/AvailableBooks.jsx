@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import BookListing from "../BookListing/BookListing"
+import Filter from "../../Filter/Filter"
 import "./AvailableBooks.css"
 
 function AvailableBooks() {
@@ -23,6 +24,9 @@ function AvailableBooks() {
   }, [])
 
   return (
+    <>
+    <Filter />
+    
     <div className="available-books">
       {availableBooks.map((availableBook) => (
         <NavLink to={"/book/" + availableBook.id} key={availableBook.id}>
@@ -35,7 +39,10 @@ function AvailableBooks() {
           />
         </NavLink>
       ))}
-    </div>
+    </div>    
+    </>
+
+
   )
 }
 
