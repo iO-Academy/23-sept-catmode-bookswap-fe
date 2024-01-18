@@ -1,3 +1,14 @@
 .filter {
     color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;  
+}
+
+.filter div {
+    margin-right: 2rem;
+}
+
+form label{
+    margin-right: 0.3rem;
 }
