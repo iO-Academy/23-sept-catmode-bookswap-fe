@@ -4,7 +4,6 @@ import BookListing from "../BookListing/BookListing"
 import Filter from "../../Filter/Filter"
 import "./AvailableBooks.css"
 import { useSearchParams } from "react-router-dom";
-import ScrollToTop from "react-scroll-to-top"
 
 function AvailableBooks() {
   const [availableBooks, setAvailableBooks] = useState([])
@@ -52,8 +51,7 @@ function AvailableBooks() {
           />
         </NavLink >
       ))}
-    </div>
-    <ScrollToTop smooth />    
+    </div>    
     </>
 
   )
