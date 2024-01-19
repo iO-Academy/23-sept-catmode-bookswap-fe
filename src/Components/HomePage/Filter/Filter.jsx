@@ -1,15 +1,46 @@
+import { useEffect, useState } from "react"
 import "./Filter.css"
 import { useSearchParams } from "react-router-dom";
 
 function Filter() {
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [availableGenres, setAvailableGenres] = useState([])
+    const [error, setError] = useState(false)
 
-    let searchValue = "";
+    let genreValue = 0
+    if(typeof searchParams.get("genre") !== 'undefined' && searchParams.get("genre") != null && searchParams.get("genre") != "" ) {
+        genreValue = searchParams.get("genre")
+      }   
+
+    let searchValue = ""
     if(typeof searchParams.get("search") !== 'undefined'  && searchParams.get("search") != null && searchParams.get("search") != "" ) {
-        searchValue = searchParams.get("search");
+        searchValue = searchParams.get("search")
       }
-    console.log("Search Value: " + searchValue);
+
+    //Fetch the genre data
+    useEffect(function() {
+        fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/genres`, {
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            method: "GET",
+        }).then(res => res.json())
+            .then(genreData => {
+                // If genreData has a key of data, we know the request worked
+                if('data' in genreData)  {
+                    setAvailableGenres(genreData.data)
+
+                    console.log('Genre data:' + JSON.stringify(genreData))
+
+                } else {
+                    // Display an error message
+                    setError(true)
+                }
+            })
+    }, [])
 
     return (
         <form>
@@ -18,10 +49,15 @@ function Filter() {
                     <label htmlFor="genre">Genre</label>
                     <select name="genre">
                         <option value="">All Genres</option>
-                        <option value="1">Thriller</option>
-                        <option value="2">Romance</option>
-                        <option value="3">Historical</option>
-                        <option value="4">Non-fiction</option>
+                        {availableGenres.map(genre => (
+                            <option 
+                            value={genre.id} 
+                            key ={genre.id}
+
+                            selected={genre.id == genreValue ? "Selected":""}
+                            
+                            >{genre.name}</option>
+                        ))}           
                     </select>
                 </div>        
             

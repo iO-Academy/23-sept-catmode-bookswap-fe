@@ -7,17 +7,17 @@ import { useSearchParams } from "react-router-dom";
 
 function AvailableBooks() {
   const [availableBooks, setAvailableBooks] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(function () {
     let queryAppend = "";
 
     if(typeof searchParams.get("genre") !== 'undefined' && searchParams.get("genre") != null && searchParams.get("genre") != "" ) {
-      queryAppend += `&genre=${searchParams.get("genre")}`;
+      queryAppend += `&genre=${searchParams.get("genre")}`
     }
 
     if(typeof searchParams.get("search") !== 'undefined'  && searchParams.get("search") != null && searchParams.get("search") != "" ) {
-      queryAppend += `&search=${searchParams.get("search")}`;
+      queryAppend += `&search=${searchParams.get("search")}`
     }
 
     fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books?claimed=0${queryAppend}`, {
