@@ -11,7 +11,7 @@ function AddNewBook() {
     genre_id: "",
     year: "2023",
     page_count: "",
-    image_url: "",
+    image: "",
     blurb: "",
   })
 
@@ -40,7 +40,7 @@ function AddNewBook() {
             genre_id: "",
             year: "2023",
             page_count: "",
-            image_url: "",
+            image: "",
             blurb: "",
           })
         }
@@ -129,8 +129,8 @@ function AddNewBook() {
         <label>Image URL</label>
         <input
           type="text"
-          value={form.image_url}
-          name="image_url"
+          value={form.image}
+          name="image"
           placeholder="Image here"
           onChange={handleChange}
         />

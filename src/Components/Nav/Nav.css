@@ -39,5 +39,7 @@
 }
 .active {
   background-color: aquamarine;
-  padding: 3px;
+}
+.logo {
+  background-color: none;
 }

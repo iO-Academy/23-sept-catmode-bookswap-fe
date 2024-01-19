@@ -1,16 +1,19 @@
+import React, { useRef } from 'react'; 
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Nav from "./components/Nav/Nav"
-import BookDetail from "./components/BookDetail/BookDetail"
+import Nav from "./Components/Nav/Nav"
+import BookDetail from "./Components/BookDetail/BookDetail"
 import ClaimedBooks from "./Components/HomePage/ClaimedBooks/ClaimedBooks"
-import AvailableBooks from "./components/HomePage/AllBooks/AvailableBooks/AvailableBooks"
-import AddNewBook from "./components/HomePage/AddNewBook/AddNewBook"
+import AvailableBooks from "./Components/HomePage/AllBooks/AvailableBooks/AvailableBooks"
+import AddNewBook from "./Components/HomePage/AddNewBook/AddNewBook"
 import "./App.css"
 
 function App() {
+  const appContainerRef = useRef(null);
+
   return (
-    <div className="app-container">
+    <div ref={appContainerRef} className="app-container">
       <BrowserRouter>
-        <Nav />
+        <Nav appContainer={appContainerRef} />
         <Routes>
           <Route path="/" element={<AvailableBooks />} />
           <Route path="book/:id" element={<BookDetail />} />
@@ -22,4 +25,5 @@ function App() {
   )
 }
 
-export default App
+export default App;
+
