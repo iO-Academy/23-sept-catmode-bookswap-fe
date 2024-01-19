@@ -24,6 +24,7 @@ function BookDetail() {
     const [claimedByName, setClaimedByName] = useState('')
     const [error, setError] = useState(false)
 
+
     //Fetch the individual book data
     useEffect(function() {
         fetch(`https://23-sept-cat-mode-bookswap-api.dev.io-academy.uk/api/books/${id}`, {
@@ -45,8 +46,8 @@ function BookDetail() {
                     setBookGenre(bookData.data.genre.name)
                     setBookBlurb(bookData.data.blurb)
                     setReviews(bookData.data.reviews)
-                    console.log(`Review count: ${bookData.data.reviews.length}`)
                     setReviewCount(bookData.data.reviews.length)
+
                     setClaimedByName(bookData.data.claimed_by_name)
                 } else {
                     // Display an error message
